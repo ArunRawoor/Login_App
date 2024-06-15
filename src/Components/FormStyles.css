@@ -1,0 +1,79 @@
+/* Existing CSS styles */
+ .form-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 1em;
+  font-family: dancing script, cursive;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  border: 1px solid #ccc;
+  border-radius: 1em;
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+ Existing CSS styles 
+
+  
+  h2 {
+    text-align: center;
+    color: #333;
+  }
+  
+  div {
+    margin-bottom: 1em;
+  }
+  
+  label {
+    margin-bottom: 0.5em;
+    color: #333;
+    display: block;
+  }
+  
+  input, button {
+    border: 1px solid #ccc;
+    padding: 0.5em;
+    font-size: 1em;
+    width: calc(100% - 1em);
+    box-sizing: border-box;
+    border-radius: 4px;
+    margin-bottom: 0.5em;
+  }
+  
+  button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 0.7em;
+    font-size: 1em;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  .error {
+    color: red;
+    font-size: 0.9em;
+  }
+  
+  p {
+    text-align: center;
+  }
+  
+  a {
+    color: #007BFF;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  } 
+  
