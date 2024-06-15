@@ -130,7 +130,7 @@ function App() {
     <Router>
       <div className="App">
         <Routes>
-          <Route path="/" element={<LoginPage />} />
+          <Route path="/Login_App" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/dashboard" element={<Dashboard />} />
         
