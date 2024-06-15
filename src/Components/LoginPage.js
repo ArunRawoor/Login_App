@@ -60,8 +60,8 @@ import { useNavigate,Link } from 'react-router-dom';
 import './FormStyles.css';
 
 const validationSchema = Yup.object().shape({
-  email: Yup.string().email('Invalid email format').required('Email is required'),
-  password: Yup.string().required('Password is required'),
+  email: Yup.string().email('Invalid email format').required('*Email is required'),
+  password: Yup.string().required('*Password is required'),
 });
 
 const LoginPage = () => {
@@ -87,13 +87,13 @@ const LoginPage = () => {
       <form onSubmit={handleSubmit(onSubmit)}>
         <div>
           <label>Email</label>
-          <input type="email" {...register('email')} />
           {errors.email && <p className="error">{errors.email.message}</p>}
+          <input type="email" {...register('email')} />
         </div>
         <div>
           <label>Password</label>
-          <input type="password" {...register('password')} />
           {errors.password && <p className="error">{errors.password.message}</p>}
+          <input type="password" {...register('password')} />
         </div>
         <button type="submit">Login</button>
       </form>

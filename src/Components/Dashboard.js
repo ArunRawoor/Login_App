@@ -8,18 +8,18 @@ const Dashboard = () => {
 
   const handleLogout = () => {
     localStorage.removeItem('currentUser');
-    navigate('/');
+    navigate('/Login_App');
   };
 
   if (!currentUser) {
-    navigate('/login');
+    navigate('/Login_App');
     return null;
   }
 
   return (
     <div className="form-container">
       <h2>Dashboard</h2>
-      <p>Welcome, {currentUser.email}</p>
+      <p>Welcome ArunRawoor's App, {currentUser.email}</p>
       <button onClick={handleLogout}>Logout</button>
     </div>
   );

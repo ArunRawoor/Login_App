@@ -6,11 +6,11 @@ import { Link, useNavigate } from 'react-router-dom';
 import './FormStyles.css';
 
 const validationSchema = Yup.object().shape({
-  email: Yup.string().email('Invalid email format').required('Email is required'),
-  password: Yup.string().required('Password is required'),
+  email: Yup.string().email('Invalid email format').required('*Email is required'),
+  password: Yup.string().required('*Password is required'),
   confirmPassword: Yup.string()
-    .oneOf([Yup.ref('password'), null], 'Passwords must match')
-    .required('Confirm Password is required'),
+    .oneOf([Yup.ref('password'), null], '*Passwords must match')
+    .required('*Confirm Password is required'),
 });
 
 const RegisterPage = () => {
@@ -24,7 +24,7 @@ const RegisterPage = () => {
     const user = { email: data.email, password: data.password };
     users.push(user);
     localStorage.setItem('users', JSON.stringify(users));
-    navigate('/');
+    navigate('/Login_App');
   };
 
   return (
@@ -33,23 +33,23 @@ const RegisterPage = () => {
       <form onSubmit={handleSubmit(onSubmit)}>
         <div>
           <label>Email</label>
-          <input type="email" {...register('email')} />
           {errors.email && <p className="error">{errors.email.message}</p>}
+          <input type="email" {...register('email')} />   
         </div>
         <div>
           <label>Password</label>
-          <input type="password" {...register('password')} />
           {errors.password && <p className="error">{errors.password.message}</p>}
+          <input type="password" {...register('password')} />
         </div>
         <div>
           <label>Confirm Password</label>
-          <input type="password" {...register('confirmPassword')} />
           {errors.confirmPassword && <p className="error">{errors.confirmPassword.message}</p>}
+          <input type="password" {...register('confirmPassword')} />
         </div>
         <button type="submit">Register</button>
       </form>
       <p>
-        Already have an account? <Link>Login</Link>
+        Already have an account? <Link to='/Login_App'>Login</Link>
       </p>
     </div>
   );
